@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twin Pilots Detailing</title>
+  <meta name="description" content="Professional aircraft cleaning and detailing in Westchester County, NY • Danbury & surrounding airports." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Twin Pilots Detailing</span>
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="btn ghost">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn" href="tel:+19145358067" aria-label="Call us">Call Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero container" id="home">
+    <div>
+      <span class="tag">Local • Insured • Hangar-friendly</span>
+      <h1>Twin Pilots Detailing</h1>
+      <p>Hello! I am a senior at Rye Neck Highschool. My whole life I have taken actions towards becoming a pilot and flying my own plane. I have cleaned a variety of planes over the past 2 years.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn" href="#contact">Request a Quote</a>
+        <a class="btn ghost" href="#services">See Services</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="assets/images/hero.jpg" alt="Cleaning a small aircraft exterior with soft-bristle tools" />
+    </div>
+  </header>
+
+  <section class="section container" id="services">
+    <h2>Services</h2>
+    <p class="lead">Clear, simple packages. We bring power, water, and all approved supplies.</p>
+    <div class="cards">
+      <article class="card" aria-label="Exterior Wash">
+        <h3>Exterior Wash</h3>
+        <p>Bug removal, foam wash, rinse, dry, and detailing spray. Safe for composites and delicate areas.</p>
+      </article>
+      <article class="card" aria-label="Interior Detail">
+        <h3>Interior Detail</h3>
+        <p>Vacuum, leather wipe-down and condition, plastics, glass, and cockpit touch surfaces.</p>
+      </article>
+      <article class="card" aria-label="Brightwork & Protection">
+        <h3>Brightwork & Protection</h3>
+        <p>Polish leading edges & spinners, apply sealant/wax, and protect high-wear areas.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section container" id="about">
+    <h2>About Us</h2>
+    <p class="lead">We’re two aviation nerds who prefer a spotless airframe. Meticulous, on-time, and local.</p>
+    <div class="about">
+      <div class="person" aria-label="Person 1">
+        <img src="assets/images/headshot-1.jpg" alt="Your headshot" />
+        <div class="meta">
+          <strong>Beckett Alberts</strong>
+          <span class="role">Co-founder • Detailing Lead</span>
+          <p class="muted">Hello! I am a senior at Rye Neck Highschool. My whole life I have taken actions towards becoming a pilot and flying my own plane. I have cleaned a variety of planes over the past 2 years.</p>
+        </div>
+      </div>
+      <div class="person" aria-label="Person 2">
+        <img src="assets/images/headshot-2.jpg" alt="Your partner's headshot" />
+        <div class="meta">
+          <strong>Max DeVaulx</strong>
+          <span class="role">Co-founder • Operations</span>
+          <p class="muted">Hey! I am a senior at Fordham Preparatory School. I have been flying and cleaning planes for over 4 years. This business can really help me attend flight school and pursue my dreams of becoming a pilot!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container" id="gallery">
+    <h2>Gallery</h2>
+    <p class="lead">A larger shot of us in action.</p>
+    <div class="gallery">
+      <div class="frame">
+        <img src="assets/images/hero.jpg" alt="In-hangar cleaning of a single-engine aircraft" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section container" id="reviews">
+    <h2>Reviews</h2>
+    <p class="lead">Tell us how we did — your feedback helps other owners choose confidently.</p>
+
+    <div class="cards" id="reviewsList" aria-live="polite" style="margin-bottom:16px">
+      <!-- Reviews will be inserted here -->
+    </div>
+
+    <form id="reviewForm" class="contact-card" style="max-width:720px">
+      <div class="contact-row" style="border-bottom:none">
+        <div style="flex:1">
+          <label for="revName" style="display:block; font-weight:600; margin-bottom:6px">Name</label>
+          <input id="revName" name="name" required placeholder="Your name" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.06); color:#e8ecf1">
+        </div>
+      </div>
+      <div class="contact-row" style="border-bottom:none">
+        <div style="flex:1">
+          <label for="revRating" style="display:block; font-weight:600; margin-bottom:6px">Rating</label>
+          <select id="revRating" name="rating" required style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.06); color:#e8ecf1">
+            <option value="" disabled selected>Select…</option>
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </div>
+      </div>
+      <div class="contact-row" style="border-bottom:none">
+        <div style="flex:1">
+          <label for="revText" sty
