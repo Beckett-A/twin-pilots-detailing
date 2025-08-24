@@ -31,9 +31,8 @@
     <div>
       <span class="tag">Local • Insured • Hangar-friendly</span>
       <h1>Twin Pilots Detailing</h1>
-      <p>Hello! I am a senior at Rye Neck Highschool. My whole life I have taken actions towards becoming a pilot and flying my own plane. I have cleaned a variety of planes over the past 2 years.</p>
+      <p>Hello! We are two student pilots who care deeply about aviation and want to help owners keep their planes spotless. Over the past few years we’ve detailed a wide variety of aircraft, always treating them as if they were our own.</p>
       <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="btn" href="#contact">Request a Quote</a>
         <a class="btn ghost" href="#services">See Services</a>
       </div>
     </div>
@@ -63,22 +62,22 @@
 
   <section class="section container" id="about">
     <h2>About Us</h2>
-    <p class="lead">We’re two aviation nerds who prefer a spotless airframe. Meticulous, on-time, and local.</p>
+    <p class="lead">We’re two aspiring pilots who share a love for aviation and a commitment to professional detailing.</p>
     <div class="about">
       <div class="person" aria-label="Person 1">
         <img src="assets/images/headshot-1.jpg" alt="Your headshot" />
         <div class="meta">
           <strong>Beckett Alberts</strong>
           <span class="role">Co-founder • Detailing Lead</span>
-          <p class="muted">Hello! I am a senior at Rye Neck Highschool. My whole life I have taken actions towards becoming a pilot and flying my own plane. I have cleaned a variety of planes over the past 2 years.</p>
+          <p class="muted">Hi, I’m Beckett! I plan to pursue my Private Pilot License in college while also studying Business and Marketing. Twin Pilots Detailing is a way for me to combine my passion for aviation with entrepreneurship. Every plane we work on brings me one step closer to flying as a licensed pilot — and your support helps us turn that dream into reality.</p>
         </div>
       </div>
       <div class="person" aria-label="Person 2">
         <img src="assets/images/headshot-2.jpg" alt="Your partner's headshot" />
         <div class="meta">
-          <strong>Max DeVaulx</strong>
+          <strong>Max De Vaulx</strong>
           <span class="role">Co-founder • Operations</span>
-          <p class="muted">Hey! I am a senior at Fordham Preparatory School. I have been flying and cleaning planes for over 4 years. This business can really help me attend flight school and pursue my dreams of becoming a pilot!</p>
+          <p class="muted">I’m Max, a self-funded high school student pilot closing in on 25 hours of flight time. My dream is to serve as a Naval Pilot, and I’m hoping to complete my Private Pilot License this fall. Through this business, I’ve been able to combine my passion for aviation with hard work, and I’m grateful for every opportunity to support fellow aviators while building my future in the skies.</p>
         </div>
       </div>
     </div>
@@ -112,17 +111,48 @@
       </div>
       <div class="contact-row" style="border-bottom:none">
         <div style="flex:1">
-          <label for="revRating" style="display:block; font-weight:600; margin-bottom:6px">Rating</label>
-          <select id="revRating" name="rating" required style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.06); color:#e8ecf1">
-            <option value="" disabled selected>Select…</option>
-            <option>5</option>
-            <option>4</option>
-            <option>3</option>
-            <option>2</option>
-            <option>1</option>
-          </select>
+          <label for="revText" style="display:block; font-weight:600; margin-bottom:6px">Review</label>
+          <textarea id="revText" name="review" maxlength="1000" required placeholder="Write your review (max 200 words)" style="width:100%; height:120px; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.06); color:#e8ecf1"></textarea>
         </div>
       </div>
-      <div class="contact-row" style="border-bottom:none">
-        <div style="flex:1">
-          <label for="revText" sty
+      <div class="contact-row" style="border-bottom:none; text-align:right">
+        <button type="submit" class="btn">Submit Review</button>
+      </div>
+    </form>
+  </section>
+
+  <script>
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewsList = document.getElementById('reviewsList');
+
+    // Load saved reviews from localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = JSON.parse(localStorage.getItem("reviews")) || [];
+      saved.forEach(r => addReview(r.name, r.text));
+    });
+
+    reviewForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('revName').value.trim();
+      const text = document.getElementById('revText').value.trim();
+      if (!name || !text) return;
+
+      addReview(name, text);
+
+      // Save to localStorage
+      const saved = JSON.parse(localStorage.getItem("reviews")) || [];
+      saved.push({ name, text });
+      localStorage.setItem("reviews", JSON.stringify(saved));
+
+      reviewForm.reset();
+    });
+
+    function addReview(name, text) {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `<h3>${name}</h3><p>${text}</p>`;
+      reviewsList.prepend(card);
+    }
+  </script>
+</body>
+</html>
